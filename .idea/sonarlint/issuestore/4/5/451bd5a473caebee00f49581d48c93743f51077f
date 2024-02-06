@@ -1,0 +1,4 @@
+
+zpython:S117	"WRename this local variable "maxLen" to match the regular expression ^[_a-z][a-z0-9_]*$.(ÑèÑıÿÿÿÿ8Ì­úû×1
+python:S100"\Rename method "lengthOfLongestSubstring" to match the regular expression ^[a-z_][a-z0-9_]*$.(¾Èìşşÿÿÿÿ8–²ùû×1
+Opython:S5806"+Rename this variable; it shadows a builtin.(¿äÆ½ûÿÿÿÿ8–²ùû×1
