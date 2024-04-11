@@ -9,7 +9,7 @@ public class AdjMatrix {
         m = sc.nextInt();
         n = sc.nextInt();
         int adj[][] = new int[m + 1][m + 1];
-        for (int i = 0; i < m; i++) {
+        for (int i = 0; i < n; i++) {
             int k = sc.nextInt();
             int j = sc.nextInt();
             adj[k][j] = 1;
