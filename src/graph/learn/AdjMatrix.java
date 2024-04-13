@@ -1,4 +1,4 @@
-package graph.takeU;
+package graph.learn;
 
 import java.util.Scanner;
 

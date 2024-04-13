@@ -1,4 +1,4 @@
-package graph.takeU.bfs;
+package graph.learn.bfs;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
