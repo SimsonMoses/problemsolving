@@ -13,9 +13,9 @@ class Pair{
     }
 }
 public class CyclicGraph {
+    public static boolean visited[] = new boolean[10];
 
     public static boolean isCyclic(int src, List<List<Integer>> adj, int v) {
-        boolean visited[] = new boolean[v];
         Queue<Pair> queue = new LinkedList<>();
         queue.add(new Pair(src,-1));
         visited[src] = true;
@@ -46,6 +46,11 @@ public class CyclicGraph {
         list.add(5, List.of(3,7));
         list.add(6, List.of(3));
         list.add(7, List.of(5));
+        for(int i =0;i<8;i++){
+            if(!visited[i] && isCyclic(i,list, 8)){
+                System.out.println(true);
+            }
+        }
         System.out.println(isCyclic(1,list, 8));
 
     }
