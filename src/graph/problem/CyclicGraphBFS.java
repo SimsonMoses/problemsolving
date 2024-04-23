@@ -12,7 +12,7 @@ class Pair{
         this.parent = parent;
     }
 }
-public class CyclicGraph {
+public class CyclicGraphBFS {
     public static boolean visited[] = new boolean[10];
 
     public static boolean isCyclic(int src, List<List<Integer>> adj, int v) {
