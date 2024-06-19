@@ -19,7 +19,7 @@ public class CyclicGraphBFS {
         Queue<Pair> queue = new LinkedList<>();
         queue.add(new Pair(src,-1));
         visited[src] = true;
-
+        System.out.println();
         while(!queue.isEmpty()){
             Pair pair = queue.poll();
             int currentElement = pair.s;

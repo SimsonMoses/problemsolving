@@ -1,16 +1,0 @@
-
-{
-java:S2293$"YReplace the type specification in this constructor call with the diamond operator ("<>").(Ô¡Ûöıÿÿÿÿ8Õ¾èú×1
->
-java:S1643"Use a StringBuilder instead.(ÛÜëùÿÿÿÿ8Ö¾èú×1
->
-java:S1643"Use a StringBuilder instead.(ÛÜëùÿÿÿÿ8Ö¾èú×1
-W
-java:S1854#"5Remove this useless assignment to local variable "n".(å¢ÏÌşÿÿÿÿ8¿èú×1
-d
-java:S1659""BDeclare "right" and all following declarations on a separate line.(Îûóßúÿÿÿÿ8¿èú×1
-H
-java:S1481#"&Remove this unused "n" local variable.(å¢ÏÌşÿÿÿÿ8¿èú×1
-G	java:S1066"+Replace this use of System.out by a logger.(Ó˜›¡8“¿èú×1
-O
-java:S1128"-Remove this unused import 'java.util.Locale'.(åğ×±ûÿÿÿÿ8“¿èú×1
