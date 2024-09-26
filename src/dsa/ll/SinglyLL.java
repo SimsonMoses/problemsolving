@@ -118,6 +118,16 @@ class LLOperation {
         }
     }
 
+    public static Node reverseRecursiveLL(Node head){
+        if(head == null || head.next == null){
+            return head;
+        }
+        Node rest = reverseRecursiveLL(head.next);
+        head.next.next = head;
+        head.next = null;
+        return rest;
+    }
+
     public static boolean searchNodeByRecursive(Node head, int data){
         if (head == null){
             return false;
@@ -144,6 +154,9 @@ public class SinglyLL {
         System.out.println("Is data present in the list: "+check);
         check = LLOperation.searchNodeByRecursive(head, 3);
         System.out.println("Is data present in the list recursive: "+check);
+        LLOperation.printLL(head);
+        System.out.println();
+        head = LLOperation.reverseRecursiveLL(head);
         LLOperation.printLL(head);
     }
 }
