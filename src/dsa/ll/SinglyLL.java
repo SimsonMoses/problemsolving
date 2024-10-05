@@ -80,6 +80,7 @@ class LLOperation {
         return head;
 
     }
+
     // insert at the end
     public static Node insertAtEnd(Node head, int newData) {
         Node newNode = new Node(newData);
@@ -88,7 +89,7 @@ class LLOperation {
         }
         Node currentNode = head;
         Node presentNode = head;
-        while (currentNode !=null){
+        while (currentNode != null) {
             presentNode = currentNode;
             currentNode = currentNode.next;
         }
@@ -96,14 +97,14 @@ class LLOperation {
         return head;
     }
 
-    public static boolean searchByData(Node head, int data){
-        if(head == null){
+    public static boolean searchByData(Node head, int data) {
+        if (head == null) {
             return false;
         }
 
         Node currentNode = head;
-        while(currentNode != null){
-            if(currentNode.data == data) {
+        while (currentNode != null) {
+            if (currentNode.data == data) {
                 return true;
             }
             currentNode = currentNode.next;
@@ -114,7 +115,7 @@ class LLOperation {
 
     public static void printLL(Node head) {
         Node temp = head;
-        if(head == null) {
+        if (head == null) {
             System.out.println("** List is empty **");
             return;
         }
@@ -125,8 +126,8 @@ class LLOperation {
         System.out.println();
     }
 
-    public static Node reverseRecursiveLL(Node head){
-        if(head == null || head.next == null){
+    public static Node reverseRecursiveLL(Node head) {
+        if (head == null || head.next == null) {
             return head;
         }
         Node rest = reverseRecursiveLL(head.next);
@@ -135,42 +136,42 @@ class LLOperation {
         return rest;
     }
 
-    public static boolean searchNodeByRecursive(Node head, int data){
-        if (head == null){
+    public static boolean searchNodeByRecursive(Node head, int data) {
+        if (head == null) {
             return false;
         }
-        if(head.data == data) {
+        if (head.data == data) {
             return true;
         }
         return searchNodeByRecursive(head.next, data);
     }
 
-    public static Node reverseNodeByStack(Node head){
+    public static Node reverseNodeByStack(Node head) {
         Stack<Node> stack = new Stack<>();
         Node temp = head;
-        while(temp!=null){
+        while (temp != null) {
             stack.push(temp);
             temp = temp.next;
         }
         head = stack.pop();
         temp = head;
-        while(!stack.isEmpty()){
-          temp.next = stack.pop();
-          temp = temp.next;
+        while (!stack.isEmpty()) {
+            temp.next = stack.pop();
+            temp = temp.next;
         }
         temp.next = null;
         return head;
     }
 
-    public static Node deleteHeadNode(Node head){
-        if(head == null)
+    public static Node deleteHeadNode(Node head) {
+        if (head == null)
             return head;
 
         head = head.next;
         return head;
     }
 
-    public static Node deleteLinkedList(Node head){
+    public static Node deleteLinkedList(Node head) {
         return null;
     }
 
@@ -185,12 +186,12 @@ public class SinglyLL {
         head = LLOperation.insertAtFront(head, 1);
         head = LLOperation.insertAtMiddle(head, 4, 5);
         head = LLOperation.insertBeforeKey(head, 8, 3);
-        head = LLOperation.insertAtPosition(head,14,5);
-        head = LLOperation.insertAtEnd(head,20);
+        head = LLOperation.insertAtPosition(head, 14, 5);
+        head = LLOperation.insertAtEnd(head, 20);
         var check = LLOperation.searchByData(head, 3);
-        System.out.println("Is data present in the list: "+check);
+        System.out.println("Is data present in the list: " + check);
         check = LLOperation.searchNodeByRecursive(head, 3);
-        System.out.println("Is data present in the list recursive: "+check);
+        System.out.println("Is data present in the list recursive: " + check);
         LLOperation.printLL(head);
         System.out.println();
         head = LLOperation.reverseRecursiveLL(head);
