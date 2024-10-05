@@ -1,6 +1,8 @@
 package dsa.ll;
 
 
+import java.util.Stack;
+
 class Node {
     int data;
     Node next;
@@ -112,10 +114,15 @@ class LLOperation {
 
     public static void printLL(Node head) {
         Node temp = head;
+        if(head == null) {
+            System.out.println("** List is empty **");
+            return;
+        }
         while (temp != null) {
             System.out.print(temp.data + "->");
             temp = temp.next;
         }
+        System.out.println();
     }
 
     public static Node reverseRecursiveLL(Node head){
@@ -137,6 +144,36 @@ class LLOperation {
         }
         return searchNodeByRecursive(head.next, data);
     }
+
+    public static Node reverseNodeByStack(Node head){
+        Stack<Node> stack = new Stack<>();
+        Node temp = head;
+        while(temp!=null){
+            stack.push(temp);
+            temp = temp.next;
+        }
+        head = stack.pop();
+        temp = head;
+        while(!stack.isEmpty()){
+          temp.next = stack.pop();
+          temp = temp.next;
+        }
+        temp.next = null;
+        return head;
+    }
+
+    public static Node deleteHeadNode(Node head){
+        if(head == null)
+            return head;
+
+        head = head.next;
+        return head;
+    }
+
+    public static Node deleteLinkedList(Node head){
+        return null;
+    }
+
 }
 
 public class SinglyLL {
@@ -157,6 +194,15 @@ public class SinglyLL {
         LLOperation.printLL(head);
         System.out.println();
         head = LLOperation.reverseRecursiveLL(head);
+        LLOperation.printLL(head);
+        System.out.println("Reverse by stack");
+        head = LLOperation.reverseNodeByStack(head);
+        LLOperation.printLL(head);
+        System.out.println("Delete head node");
+        head = LLOperation.deleteHeadNode(head);
+        LLOperation.printLL(head);
+        System.out.println("Delete linked List");
+        head = LLOperation.deleteLinkedList(head); // set null to the head, java garbage collector will take care of it
         LLOperation.printLL(head);
     }
 }
