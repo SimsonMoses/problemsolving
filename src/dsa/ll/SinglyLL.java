@@ -175,6 +175,16 @@ class LLOperation {
         return null;
     }
 
+    public static Node findNthNode(Node head, int n) {
+        if(head==null) {
+            return null;
+        }
+        if(n==1) {
+            return head;
+        }
+        return findNthNode(head.next,n-1);
+    }
+
 }
 
 public class SinglyLL {
@@ -205,5 +215,11 @@ public class SinglyLL {
         System.out.println("Delete linked List");
         head = LLOperation.deleteLinkedList(head); // set null to the head, java garbage collector will take care of it
         LLOperation.printLL(head);
+        System.out.println("Find nth node");
+        head = new Node(2);
+        head.next = new Node(3);
+        head.next.next = new Node(5);
+        head.next.next.next = new Node(7);
+        System.out.println(LLOperation.findNthNode(head, 3).data);
     }
 }
