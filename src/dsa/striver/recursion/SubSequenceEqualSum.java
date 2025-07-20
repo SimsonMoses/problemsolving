@@ -8,7 +8,9 @@ public class SubSequenceEqualSum {
         int arr[] = {1, 2, 3, 4, 5};
         int target = 5;
         SubSequenceEqualSum subsequenceEqualSum = new SubSequenceEqualSum();
-        subsequenceEqualSum.solveOne(0, new ArrayList<>(), arr, 0, target);
+//        subsequenceEqualSum.solveOne(0, new ArrayList<>(), arr, 0, target);
+
+        System.out.println(subsequenceEqualSum.solveCountSubSequence(0, arr, 0, target));
     }
 
     public void solve(int index, List<Integer> list, int arr[], int sum, int target) {
@@ -47,5 +49,19 @@ public class SubSequenceEqualSum {
             return true;
         }
         return false;
+    }
+
+    public int solveCountSubSequence(int index,int arr[],int sum, int target){
+        if(sum==target){
+            return 1;
+        }
+        if(index==arr.length){
+            return 0;
+        }
+        sum+= arr[index];
+        int left = solveCountSubSequence(index+1, arr, sum, target);
+        sum -= arr[index];
+        int right = solveCountSubSequence(index+1, arr, sum, target);
+        return left + right;
     }
 }
